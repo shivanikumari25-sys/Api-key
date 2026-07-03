@@ -1,21 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Quiz Helper</title>
-  <link rel="stylesheet" href="Gemini.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Goal App</title>
+
+  <link rel="stylesheet" href="Hack.css">
+
 </head>
+
 <body>
-
+  <nav>
+    <div class="logo">
+      <i class="fa-solid fa-bullseye"></i>
+      <h2>Goal App</h2>
+    </div>
+    <div class="nav-btns">
+      <button onclick="showSignup()">Signup</button>
+      <button onclick="showLogin()"> Login</button>
+      <button onclick="showAllGoals()"> All Goals</button>
+    </div>
+  </nav>
   <div class="container">
-    <h2>🧠 Quiz Helper</h2>
+    <div class="sidebar">
+      <div class="profile">
+        <i class="fa-solid fa-user"></i>
+        <h3>Welcome</h3>
+        <p id="userName"> User</p>
+      </div>
+      <ul>
+        <li><i class="fa-solid fa-table"></i>Dashboard</li>
+        <li><i class="fa-solid fa-list"></i> My Goals</li>
+        <li><i class="fa-solid fa-heart"></i>Reflection </li>
+        <li onclick="logout()"> <i class="fa-solid fa-right-from-bracket"></i> Logout</li>
 
-    <input type="text" id="topic" placeholder="Enter topic (e.g. Photosynthesis)">
-    <button id="btn">Get Question</button>
-
-    <div id="output"></div>
+      </ul>
+      <div class="quote-box">
+        <p>Discipline today leads to success tomorrow.</p>
+      </div>
+    </div>
+    <div class="main">
+      <h1>Dashboard</h1>
+      <div class="cards">
+        <div class="card blue">
+          <h3>Total Goals</h3>
+          <h1 id="totalGoals">0</h1>
+        </div>
+        <div class="card yellow">
+          <h3>Pending</h3>
+          <h1 id="pendingGoals">0</h1>
+        </div>
+        <div class="card green">
+          <h3>Completed</h3>
+          <h1 id="completedGoals">0</h1>
+        </div>
+      </div>
+      <div class="auth" id="signupBox">
+        <h2>Signup</h2>
+        <input type="email" id="signupEmail" placeholder="Enter Email">
+        <input type="password" id="signupPassword" placeholder="Enter Password">
+        <button onclick="signup()"> Signup</button>
+      </div>
+      <div class="auth" id="loginBox">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Enter Email">
+        <input type="password" id="loginPassword" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+      </div>
+      <div class="goal-form">
+        <h2>Add New Goal</h2>
+        <form id="goalForm">
+          <div class="form-grid">
+            <input type="text" id="title" placeholder="Goal Title" required>
+            <textarea id="description" placeholder="Description"></textarea>
+            <select id="category">
+              <option>phase1</option>
+              <option>phase2</option>
+              <option>phase3</option>
+              <option>phase4</option>
+              <option>phase5</option>
+            </select>
+            <input type="date" id="date" required>
+            <select id="priority">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+            <input type="text" id="target" placeholder="Daily Target">
+          </div>
+          <button class="add-btn">+ Add Goal</button>
+        </form>
+      </div>
+      <div class="goal-list-section">
+        <h2>Your Goals</h2>
+        <div id="goalList"></div>
+      </div>
+      <div class="reflection-box">
+        <h2>Daily Reflection</h2>
+        <textarea id="reflectionText" placeholder="Write your reflection..."></textarea>
+        <button onclick="saveReflection()">Save Reflection </button>
+        <p id="savedReflection"></p>
+      </div>
+    </div>
   </div>
-
-  <script src="Gemini.js"></script>
+  <footer>
+    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">shivanikumari25@navgurukul.org</a>
+  </footer>
+  <script src="Hack.js"></script>
 </body>
 </html>
